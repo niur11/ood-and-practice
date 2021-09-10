@@ -67,7 +67,7 @@ public class Dijkstra {
                 (c1, c2) -> (c1.distanceFromOrigin - c2.distanceFromOrigin)
         );
         minHeap.offer(cellMap.get(start));
-        //weighted bfd
+        //weighted bfs
         while (!minHeap.isEmpty()) {
             Cell cell = minHeap.poll();
             int cellIndex = cellIndexMap.get(cell);
