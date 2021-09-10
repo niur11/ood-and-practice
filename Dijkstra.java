@@ -50,13 +50,9 @@ public class Dijkstra {
             cellIndexMap.put(cell, i);
         }
         for (int[] edge : edgeTable) {
-//            Cell orig = cellMap.get(edge[0]);
-//            Cell dest = cellMap.get(edge[1]);
             int origID = edge[0];
             int destID = edge[1];
             int weight = edge[2];
-//            graph.get(orig).add(new Edge(dest,weight));
-//            graph.get(dest).add(new Edge(orig,weight));
             graph.get(origID).add(new Edge(destID,weight));
             graph.get((destID)).add(new Edge(origID,weight));
         }
