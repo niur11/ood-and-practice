@@ -25,7 +25,6 @@ public class Dijkstra {
     }
 
     Map<Integer, Integer> distanceTable; // a lookup table just for result display
-    //Map<Cell, Boolean> cellStatusMap;
     Set<Cell> unvisited;
     Map<Integer, List<Edge>> graph;
     Map<Integer, Cell> cellMap;
@@ -41,6 +40,7 @@ public class Dijkstra {
 
     public void init(int[][] edgeTable, int n) {
         List<Cell> cellList = new ArrayList<>();
+        //initialization
         for (int i = 1; i <= n; i++) {
             Cell cell = new Cell(i, Integer.MAX_VALUE);
             cellMap.put(i, cell);
@@ -49,6 +49,7 @@ public class Dijkstra {
             graph.put(i, new ArrayList<>());
             cellIndexMap.put(cell, i);
         }
+        //build graph, connect edges
         for (int[] edge : edgeTable) {
             int origID = edge[0];
             int destID = edge[1];
@@ -95,6 +96,7 @@ public class Dijkstra {
     }
 
     public static void main(String[] args) {
+        //{fromVertex, toVertex, edgeWeight}
         int[][] edgeMatrix = {
                 {1,2,3},
                 {1,3,5},
